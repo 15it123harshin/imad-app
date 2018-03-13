@@ -81,6 +81,17 @@ app.get('/ArticleName', function (req, res) {
   res.send(createTemplateArticles(ArticleName));
 });
 
+app.get('/Article2', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'Article2.html'));
+});
+
+app.get('/Article3', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'Article3.html'));
+});
+
+app.get('/ui/style.css', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'style.css'));
+});
 
 app.get('/ui/madi.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
