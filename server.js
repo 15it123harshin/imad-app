@@ -8,9 +8,48 @@ app.use(morgan('combined'));
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
+var Article1 = {
+    title: 'Article1 | Harshin Shah',
+    heading: 'Article1',
+    date: '13 Mar 2018',
+    content:     
+    `<p>
+    This is the content.This is the content.This is the content.This is the content.This is the content.
+    This is the content.This is the content.This is the content.This is the content.
+    This is the content.This is the content.
+    </p>`
+};
+function createTemplate(data)
+{
+    var title = data.title;
+    var heading = data.heading;
+    var content = data.comtent;
+
+var htmlTemplate =` 
+<html>
+<head>
+<title> 
+  ${title}
+</title>
+ <link href="/ui/style.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div>
+        <a href="/">Home</a>
+    </div>
+<h1>${heading}</h1>
+<div class="container">
+    ${content}
+</div>
+</body>
+</html>` 
+
+
+}
 
 app.get('/Article1', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'Article1.html'));
+  res.send(createTemplate(Article1));
 });
 
 app.get('/Article2', function (req, res) {
