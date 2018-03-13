@@ -78,7 +78,7 @@ app.get('/:ArticleName', function (req, res) {
     //ArticleName == Article1
     //Articles[ArticleName == {} contet object for Article1
     var ArticleName = req.params.ArticleName; 
-  res.send(createTemplateArticles(ArticleName));
+  res.send(createTemplateArticles[ArticleName]);
 });
 
 app.get('/Article2', function (req, res) {
