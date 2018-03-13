@@ -59,7 +59,9 @@ var htmlTemplate =`
 </title>
  <link href="/ui/style.css" rel="stylesheet" />
 </head>
-
+<script>
+alert('Hi I'm Javascript');
+</script>
 <body>
     <div>
         <a href="/">Home</a>
@@ -89,8 +91,8 @@ app.get('/Article3', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'Article3.html'));
 });
 
-app.get('/ui/style.css', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'style.css'));
+app.get('/ui/main.js', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'main.js'));
 });
 
 app.get('/ui/madi.png', function (req, res) {
